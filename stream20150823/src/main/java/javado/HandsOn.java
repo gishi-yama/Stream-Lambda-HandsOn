@@ -164,8 +164,9 @@ public class HandsOn {
     List<Profile> profiles = service.fetchProfiles();
     // ヒント：返値がMap<String, List>であることに注意
     // streamをmapにグルーピングする終端操作は
-    // collect(Collectors.groupingBy(キーを決めるラムダ式, Collectors.mapping(値を決めるラムダ式,
-    // Collectors.toList()))) です（この箇所はdownstream collectorのため toList() にはできません）
+    // collect(Collectors.groupingBy(キーを決めるラムダ式,
+    //     Collectors.mapping(値を決めるラムダ式, Collectors.toList())))
+    // です
     Map<String, List<String>> choiced = null;
     view(choiced);
   }
