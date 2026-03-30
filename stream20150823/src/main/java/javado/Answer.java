@@ -64,7 +64,7 @@ public class Answer {
     List<Profile> profiles = service.fetchProfiles();
     List<Profile> choiced = profiles.stream()
         .filter(p -> p.getSex() == 1)
-        .collect(Collectors.toList());
+        .toList();
     view(choiced);
   }
 
@@ -75,7 +75,7 @@ public class Answer {
     List<Profile> choiced = profiles.stream()
         .filter(p -> p.getSex() == 1)
         .filter(p -> p.getAge() >= 20)
-        .collect(Collectors.toList());
+        .toList();
     view(choiced);
   }
 
@@ -87,7 +87,7 @@ public class Answer {
         .filter(p -> p.isFamale())
         .filter(p -> p.isAdult())
         .map(p -> p.getName())
-        .collect(Collectors.toList());
+        .toList();
     view(choiced);
   }
 
@@ -99,7 +99,7 @@ public class Answer {
         .filter(Profile::isFamale)
         .filter(Profile::isAdult)
         .sorted(Comparator.comparing(Profile::getAge))
-        .collect(Collectors.toList());
+        .toList();
     view(choiced);
   }
 
@@ -111,7 +111,7 @@ public class Answer {
         .filter(Profile::isMale)
         .filter(Profile::isUnderage)
         .sorted(Comparator.comparing(Profile::getAge))
-        .collect(Collectors.toList());
+        .toList();
     view(choiced);
   }
 
@@ -123,7 +123,7 @@ public class Answer {
         .filter(Profile::isMale)
         .filter(Profile::isUnderage)
         .sorted(Comparator.comparing(Profile::getAge).reversed())
-        .collect(Collectors.toList());
+        .toList();
     view(choiced);
   }
 
@@ -187,7 +187,7 @@ public class Answer {
         // 上の2行は .map(p -> p.getPolicy().split("・")) にまとめてもよい
         .flatMap(strs -> Arrays.stream(strs))
         .distinct()
-        .collect(Collectors.toList());
+        .toList();
     view(choiced);
   }
 

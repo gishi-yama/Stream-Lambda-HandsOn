@@ -22,7 +22,7 @@ public class Service {
       return lines
           .skip(1L)
           .map(l -> new Profile(l.split(",")))
-          .collect(Collectors.toList());
+          .toList();
     } catch (IOException e) {
       e.printStackTrace();
     }
