@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Service {
@@ -22,7 +21,7 @@ public class Service {
       return lines
           .skip(1L)
           .map(l -> new Profile(l.split(",")))
-          .collect(Collectors.toList());
+          .toList();
     } catch (IOException e) {
       e.printStackTrace();
     }

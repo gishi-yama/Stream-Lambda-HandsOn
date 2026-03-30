@@ -58,9 +58,9 @@ public class HandsOn {
     System.out.println("------------ example1 ----------");
     List<Profile> profiles = service.fetchProfiles();
     // ヒント：filter中間操作を使い、profile.getSex() が 1 であるprofileのstreamにしましょう
-    // Streamの要素をListに集めて返す終端操作は collect(Collectors.toList()) です
+    // Streamの要素をListに集めて返す終端操作は toList() です
     List<Profile> choiced = profiles.stream()
-        .collect(Collectors.toList());
+        .toList();
     view(choiced);
   }
 
